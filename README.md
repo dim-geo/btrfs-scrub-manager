@@ -1,7 +1,7 @@
 # btrfs-scrub-manager
 btrfs scrub script that uses btrfs scrub limit to prevent stalling system while scrubbing.
 Btrfs now can use limit to throttle disk parsing. This script starts or resume a scrub and makes sure to finish the scrub on time before a `-p` period.
-The idea is that the user wants a monthly scrub, but the scrub should not stall the system. To prevent stalling the script sets the scrub limit to an appropriate value to finish scrub on time, before 15 of the month.
+The idea is that the user wants a monthly scrub, but the scrub should not stall the system. To prevent stalling, the script sets the scrub limit to an appropriate value to finish scrub on time, before 15 of the month.
 
 Period is set be default to one month.
 Script will start scrubbing *automatically* every period and will try to finish it by current cycle + period/2.

@@ -34,5 +34,5 @@ Behavior:
     6. If trend is lagging behind (e.g. server was off or heavy disk load), boosts scrub limit.
     7. If trend is ahead of schedule, throttles limit down to spare I/O (minimum limit: ${MIN_LIMIT} B/s).
     8. After cutoff time (elapsed >= period / 2), removes rate limit (unlimited).
-    9. Updates scrub rate limit every ${POLL_INTERVAL} seconds until completion.
+    9. Updates scrub rate limit every 6 seconds until completion.
 ```

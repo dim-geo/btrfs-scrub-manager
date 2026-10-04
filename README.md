@@ -32,7 +32,7 @@ Behavior:
     5. Actively monitors and calculates past speed trend (bytes scrubbed / elapsed cycle time).
        Assumes scrub started on time for the current cycle (at cycle * period).
     6. If trend is lagging behind (e.g. server was off or heavy disk load), boosts scrub limit.
-    7. If trend is ahead of schedule, throttles limit down to spare I/O (minimum limit: ${MIN_LIMIT} B/s).
+    7. If trend is ahead of schedule, throttles limit down to spare I/O (minimum limit: 100 B/s).
     8. After cutoff time (elapsed >= period / 2), removes rate limit (unlimited).
     9. Updates scrub rate limit every 6 seconds until completion.
 ```

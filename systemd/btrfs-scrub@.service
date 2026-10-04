@@ -1,0 +1,16 @@
+[Unit]
+Description=Btrfs Scrub Manager for %f
+Documentation=man:btrfs-scrub(8)
+ConditionPathIsMountPoint=%f
+
+[Service]
+Type=simple
+Nice=19
+IOSchedulingClass=idle
+ExecStart=/usr/local/bin/btrfs-scrub-manager.sh %f
+KillSignal=SIGTERM
+TimeoutStopSec=30
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

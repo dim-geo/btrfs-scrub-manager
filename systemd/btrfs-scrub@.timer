@@ -1,0 +1,11 @@
+[Unit]
+Description=Periodic Btrfs Scrub Manager Timer for %f
+Documentation=man:btrfs-scrub(8)
+
+[Timer]
+# Run hourly to check if scrub needs to be resumed or if a new cycle is due
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
